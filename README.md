@@ -2,11 +2,11 @@ Author: Hannes Tjulin
 
 Student ID: ht222pt
 # Tutorial on how to make a Plant Monitor
-Plant monitor for the course "Introduction to Applied IoT" at LNU
-
 Short project overview
 
 How much time it might take to do (approximation)
+
+This is a tutorial on how to make a plant monitor that both monitors long-term developments in a plant’s climate and can alert when it is time to water the plant. Following this guide should take no more than two hours, provided that all materials are at hand.
 
 # Objective
 Why you chose the project
@@ -14,6 +14,10 @@ Why you chose the project
 What purpose does it serve
 
 What insights you think it will give
+
+My girlfriend has a large collection of houseplants. While she does not need reminders to water them, I do when she is away. In addition, she has read up on optimal conditions for her plants, but quantifying anything other than temperature requires specialized measuring equipment which we do not have. From these twin needs of long-term measurements and short-term alerts, the idea of this project was born. 
+
+My hope is that the work done in researching and preparing this will enable me to do other projects within IoT. There is also room for improvement in this device, such as making it portable, which I might tackle in some spare time. 
 
 # Material
 List of material
