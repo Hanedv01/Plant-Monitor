@@ -59,7 +59,8 @@ Which wireless protocols did you use (WiFi, LoRa, etc …)?
 Which transport protocols were used (MQTT, webhook, etc …)
 
 *Elaborate on the design choices regarding data transmission and wireless protocols. That is how your choices affect the device range and battery consumption.
-Presenting the data
+
+# Presenting the data
 
 Describe the presentation part. How is the dashboard built? How long is the data preserved in the database?
 
