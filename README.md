@@ -35,6 +35,18 @@ How the code is uploaded
 
 Steps that you needed to do for your computer. Installation of Node.js, extra drivers, etc.
 
+This section contains two guides. First, how to update the firmware on the Raspberry Pi Pico. This is necessary for the Raspberry Pi to be able to run Python code. 
+
+1. Install [Python]( https://www.python.org/downloads/) and [VS Code](https://code.visualstudio.com/download) on your computer if you don’t have them already.
+2. Open VS Code and install the Pymakr extension. This is done by opening the tab “Extensions” in the left side menu (can also be done with Ctrl+Shift+X), searching for “Pymakr” and clicking “Install”.
+3. Update the firmware:
+	1. Download the [firmware](https://micropython.org/download/RPI_PICO_W/). Select the latest edition from “Releases”.
+	2. Carefully insert the USB-Cable into the Raspberry Pi Pico. It cannot be inserted fully, a small gap will be left. 
+	3. Hold down the BOOTSEL button on the Raspberry Pi while inserting the USB Cable into your computer. 
+	4. A new drive called RPI-RP2 should open on your computer. Copy/paste the firmware that you downloaded into this drive. Wait until the drive closes down by itself. You should be ready to code now!
+
+All of the steps above are required regardless of what device you want to create with your Raspberry Pi. What follows are the steps specific to this project.
+
 # Putting everything together
 How is all the electronics connected? Describe all the wiring, good if you can show a circuit diagram. Be specific on how to connect everything, and what to think of in terms of resistors, current and voltage. Is this only for a development setup or could it be used in production?
 
