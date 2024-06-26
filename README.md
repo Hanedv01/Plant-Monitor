@@ -26,7 +26,24 @@ What the different things (sensors, wires, controllers) do - short specification
 
 Where you bought them and how much they cost
 
-# Computer setup
+The following materials are required to make this plant monitor in its most basic form. 
+
+| Material | Price |
+| ----------- | ----------- |
+| [Raspberry Pi Pico WH](https://www.electrokit.com/raspberry-pi-pico-wh) | 109 |
+| [USB Cable A M – micro B M](https://www.electrokit.com/usb-kabel-a-hane-micro-b-5p-hane-1.8m) | 39 |
+| [Breadboard](https://www.electrokit.com/kopplingsdack-840-anslutningar) | 69 |
+| [Jumper Cables M-M (x)](https://www.electrokit.com/labbsladd-20-pin-15cm-hane/hane | 29 |
+| [Jumper Cables M-F (x)](https://www.electrokit.com/labbsladd-20-pin-15cm-hona/hane) | 29 |
+| [JST-PH Cable](https://www.electrokit.com/kabel-med-jst-ph-4-pol-hona-/-0.64mm-stift-200mm) | 24 |
+| [Adafruit STEMMA Soil Sensor](https://www.electrokit.com/jordfuktighetssensor-kapacitiv-i2c) | 115 |
+| [DHT 11 Humidity and Temperature Sensor] (https://www.electrokit.com/digital-temperatur-och-fuktsensor-dht11) |49|
+| [Photoresistor Module](https://www.electrokit.com/ljussensor) | 39 |
+| **TOTAL** | **463** |
+
+
+
+  Computer setup
 How is the device programmed. Which IDE are you using. Describe all steps from flashing the firmware, installing plugins in your favorite editor. How flashing is done on MicroPython. The aim is that a beginner should be able to understand.
 
 Chosen IDE
