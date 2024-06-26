@@ -26,7 +26,7 @@ What the different things (sensors, wires, controllers) do - short specification
 
 Where you bought them and how much they cost
 
-The following materials are required to make this plant monitor in its most basic form. 
+The following materials are required to make this plant monitor in its most basic form. Everything was bought from [Electrokit](https://www.electrokit.com/).
 
 | Material | Price |
 | ----------- | ----------- |
@@ -41,9 +41,14 @@ The following materials are required to make this plant monitor in its most basi
 | [Photoresistor Module](https://www.electrokit.com/ljussensor) | 39 |
 | **TOTAL** | **463** |
 
+The Raspberry Pi is the brain of the device. Variants other than Pico WH may be chosen, but then this guide should not be followed to the letter, as details may differ. Data is sent with the Raspberry Pi’s own Wi-Fi transmitter.
+
+The device has three important sensors: the DHT 11 which measures temperature and humidity, the photoresistor module which measures light intensity and the Adafruit STEMMA soil sensor which measures soil moisture. 
+
+Lastly, some hardware to make everything else work: The USB cable powers everything, the jumper cables connect everything and the breadboard forms a stable base for everything. The JST-PH cable is required for the soil sensor, which does not connect to ordinary jumper cables.
 
 
-  Computer setup
+# Computer setup
 How is the device programmed. Which IDE are you using. Describe all steps from flashing the firmware, installing plugins in your favorite editor. How flashing is done on MicroPython. The aim is that a beginner should be able to understand.
 
 Chosen IDE
