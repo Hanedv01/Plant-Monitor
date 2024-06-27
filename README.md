@@ -59,7 +59,7 @@ Steps that you needed to do for your computer. Installation of Node.js, extra dr
 
 This section contains two guides. First, how to update the firmware on the Raspberry Pi Pico. This is necessary for the Raspberry Pi to be able to run Python code. 
 
-1. Install [Python]( https://www.python.org/downloads/) and [VS Code](https://code.visualstudio.com/download) on your computer if you don’t have them already.
+1. Install [Python](https://www.python.org/downloads/) and [VS Code](https://code.visualstudio.com/download) on your computer and make sure that they work using [this guide]( https://code.visualstudio.com/docs/python/python-tutorial) if you don’t have them already. I use VS Code as I am used to it, but other IDE:s such as Thonny are also possible.
 2. Open VS Code and install the Pymakr extension. This is done by opening the tab “Extensions” in the left side menu (can also be done with Ctrl+Shift+X), searching for “Pymakr” and clicking “Install”.
 3. Update the firmware:
 	1. Download the [firmware](https://micropython.org/download/RPI_PICO_W/). Select the latest edition from “Releases”.
@@ -67,7 +67,24 @@ This section contains two guides. First, how to update the firmware on the Raspb
 	3. Hold down the BOOTSEL button on the Raspberry Pi while inserting the USB Cable into your computer. 
 	4. A new drive called RPI-RP2 should open on your computer. Copy/paste the firmware that you downloaded into this drive. Wait until the drive closes down by itself. You should be ready to code now!
 
-All of the steps above are required regardless of what device you want to create with your Raspberry Pi. What follows are the steps specific to this project.
+All of the steps above are required regardless of what device you want to create with your Raspberry Pi. After they are done, the BOOTSEL button does not need to be pressed and the device can be plugged into your computer normally. What follows are the steps specific to this project. The data will be sent to and visualized in [adafruit](https://io.adafruit.com), so we begin by setting up everything there.
+
+1. Create an account at [this link](https://accounts.adafruit.com/). Log in and click “IO” in the top menu.
+2. Go to Feeds >> + New Feed and create four new feeds for the four measurements we will perform: temperature, humidity, light and soil moisture. Name the feeds so that you can tell them apart.
+3. Got to Dashboards >> + New Dashboard and create a new dashboard. Click on it and go to the gearwheel in the top right corner and then “+ Create New Block”. Using this method, create four “Line Chart Blocks”, one for each feed.
+4. In coming steps, you will need your credentials (Username and Active Key). These are found by clicking on the yellow key button next to “+ New Device” in the top right corner. Additionally, you will need the address to your feeds. They are found by going to Feeds >> Selected Feed >> Feed Info >> MQTT by key.
+
+The above steps follow [this guide](https://hackmd.io/@lnu-iot/r1yEtcs55). If anything is unclear, compare with that page.
+
+1. Download the folder “Plant monitor code” from this GitHub page.
+2. Open the folder in VS Code by selecting File >> Open Folder and selecting the folder that you downloaded.
+3. Change all variables in lib/keys.py to line up with your own credentials. Two types of information are needed: password and SSID for your Wi-Fi (make sure that its frequency is 2.4 GHz) and information about your adafruit account. 
+4. Go to the PyMakr window in VS Code’s left sidebar. If you have downloaded everything correctly, there should be a project named “Plant Monitor” under the Projects tab. The following steps are required after each time you have updated something in your code, and assume that your device is plugged into your computer.
+1. Click on “ADD DEVICES” under the project and select TODO.
+2. Create a terminal for the Raspberry Pi by clicking TODO.
+3. Start development mode for this project by hovering over the projects name and clicking the button that looks like “</>”.
+4. Send the code to the Raspberry Pi by saving (Ctrl + S).
+5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
 
 # Putting everything together
 How is all the electronics connected? Describe all the wiring, good if you can show a circuit diagram. Be specific on how to connect everything, and what to think of in terms of resistors, current and voltage. Is this only for a development setup or could it be used in production?
