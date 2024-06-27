@@ -77,8 +77,7 @@ The data will be sent to and visualized in [adafruit](https://io.adafruit.com), 
 
 1. Create an account at [this link](https://accounts.adafruit.com/). Log in and click “IO” in the top menu.
 2. Go to Feeds >> + New Feed and create four new feeds for the four measurements we will perform: temperature, humidity, light and soil moisture. Name the feeds so that you can tell them apart.
-3. Got to Dashboards >> + New Dashboard and create a new dashboard. Click on it and go to the gearwheel in the top right corner and then “+ Create New Block”. Using this method, create four “Line Chart Blocks”, one for each feed.
-4. In coming steps, you will need your credentials (Username and Active Key). These are found by clicking on the yellow key button next to “+ New Device” in the top right corner. Additionally, you will need the address to your feeds. They are found by going to Feeds >> Selected Feed >> Feed Info >> MQTT by key.
+3. In coming steps, you will need your credentials (Username and Active Key). These are found by clicking on the yellow key button next to “+ New Device” in the top right corner. Additionally, you will need the address to your feeds. They are found by going to Feeds >> Selected Feed >> Feed Info >> MQTT by key.
 
 The above steps follow [this guide](https://hackmd.io/@lnu-iot/r1yEtcs55). If anything is unclear, compare with that page.
 
@@ -88,11 +87,11 @@ Finally, the code will be uploaded to your Raspberry Pi. Every time you change s
 2. Open the folder in VS Code by selecting File >> Open Folder and selecting the folder that you downloaded.
 3. Change all variables in **lib/keys.py** to line up with your own credentials. Two types of information are needed: password and SSID for your Wi-Fi (make sure that its frequency is 2.4 GHz) and information about your adafruit account. 
 4. Go to the PyMakr window in VS Code’s left sidebar. If you have downloaded everything correctly, there should be a project named “Plant Monitor” under the Projects tab. 
-1. Click on “ADD DEVICES” under the project and select TODO.
-2. Create a terminal for the Raspberry Pi by clicking TODO.
-3. Start development mode for this project by hovering over the projects name and clicking the button that looks like “</>”.
-4. Send the code to the Raspberry Pi by saving (Ctrl + S).
-5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
+	1. Click on “ADD DEVICES” under the project and select TODO.
+	2. Create a terminal for the Raspberry Pi by clicking TODO.
+	3. Start development mode for this project by hovering over the projects name and clicking the button that looks like “</>”.
+	4. Send the code to the Raspberry Pi by saving (Ctrl + S).
+	5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
 
 # Putting everything together
 How is all the electronics connected? Describe all the wiring, good if you can show a circuit diagram. Be specific on how to connect everything, and what to think of in terms of resistors, current and voltage. Is this only for a development setup or could it be used in production?
@@ -125,21 +124,17 @@ Which transport protocols were used (MQTT, webhook, etc …)
 
 *Elaborate on the design choices regarding data transmission and wireless protocols. That is how your choices affect the device range and battery consumption.
 
-As alluded to in previous sections, data is transmitted via Wi-Fi using adafruit IO as an MQTT broker. My initial idea was to use LoRa instead of Wi-Fi to transmit data, as it has several advantages: namely longer range and lower power consumption. This project was however developed away from any preexisting LoRa gateway, and I did not want to create and maintain one for myself as that would cost money. In addition, both low range and high power consumption matter less in this current implementation, as this device will be kept at home plugged into a wall socket and in range of Wi-Fi at all times. The effective range is extended by the adafruit IO solution, as I can access my data from anywhere where I have an internet connection.
+As alluded to in previous sections, data is transmitted via Wi-Fi using adafruit IO as an MQTT broker. Currently, it sends data every fifth minute, but I see no need to update as frequently when it is deployed in its final state: every hour or so will do.
+
+My initial idea was to use LoRa instead of Wi-Fi to transmit data, as it has several advantages: namely longer range and lower power consumption. This project was however developed away from any preexisting LoRa gateway, and I did not want to create and maintain one for myself as that would cost money. In addition, both low range and high power consumption matter less in this current implementation, as this device will be kept at home plugged into a wall socket and in range of Wi-Fi at all times. The effective range is extended by the adafruit IO solution, as I can access my data from anywhere where I have an internet connection.
 
 
 
 # Presenting the data
+The data is presented in adafruit’s own dashboard. Its creation is simple: first, log in to adafruit and press IO in the top menu. Then, go to Dashboards >> + New Dashboard and create a new dashboard. Click on it and go to the gearwheel in the top right corner and then “+ Create New Block”. Using this method, create four “Line Chart Blocks”, one for each feed which you should have: temperature, humidity, light and soil moisture. Design the blocks according to your own preferences using the gearwheel in the top right corner.
 
-Describe the presentation part. How is the dashboard built? How long is the data preserved in the database?
+How long data will be preserved can be decided when creating the blocks. During development, I kept data for 48 hours, but in the final deployment I plan on saving it for longer, likely a week or a month. Long term developments are more interesting to me than to remember how the weather was yesterday!
 
-Provide visual examples on how the dashboard looks. Pictures needed.
-
-How often is data saved in the database.
-
-*Explain your choice of database.
-
-*Automation/triggers of the data.
 
 # Finalizing the design
 Show the final results of your project. Give your final thoughts on how you think the project went. What could have been done in an other way, or even better? Pictures are nice!
