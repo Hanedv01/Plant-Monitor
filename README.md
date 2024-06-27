@@ -80,11 +80,11 @@ The above steps follow [this guide](https://hackmd.io/@lnu-iot/r1yEtcs55). If an
 2. Open the folder in VS Code by selecting File >> Open Folder and selecting the folder that you downloaded.
 3. Change all variables in lib/keys.py to line up with your own credentials. Two types of information are needed: password and SSID for your Wi-Fi (make sure that its frequency is 2.4 GHz) and information about your adafruit account. 
 4. Go to the PyMakr window in VS Code’s left sidebar. If you have downloaded everything correctly, there should be a project named “Plant Monitor” under the Projects tab. The following steps are required after each time you have updated something in your code, and assume that your device is plugged into your computer.
-1. Click on “ADD DEVICES” under the project and select TODO.
-2. Create a terminal for the Raspberry Pi by clicking TODO.
-3. Start development mode for this project by hovering over the projects name and clicking the button that looks like “</>”.
-4. Send the code to the Raspberry Pi by saving (Ctrl + S).
-5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
+	1. Click on “ADD DEVICES” under the project and select TODO.
+	2. Create a terminal for the Raspberry Pi by clicking TODO.
+	3. Start development mode for this project by hovering over the projects name and clicking the button that looks like “</>”.
+	4. Send the code to the Raspberry Pi by saving (Ctrl + S).
+	5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
 
 # Putting everything together
 How is all the electronics connected? Describe all the wiring, good if you can show a circuit diagram. Be specific on how to connect everything, and what to think of in terms of resistors, current and voltage. Is this only for a development setup or could it be used in production?
