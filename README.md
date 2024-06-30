@@ -85,16 +85,6 @@ I used adafruit IO as a platform for my data. This is a free-to-use cloud servic
 Import core functions of your code here, and don't forget to explain what you have done! Do not put too much code here, focus on the core functionalities. Have you done a specific function that does a calculation, or are you using clever function for sending data on two networks? Or, are you checking if the value is reasonable etc. Explain what you have done, including the setup of the network, wireless, libraries and all that is needed to understand.
 
 # Transmitting the data / connectivity
-How is the data transmitted to the internet or local server? Describe the package format. All the different steps that are needed in getting the data to your end-point. Explain both the code and choice of wireless protocols.
-
-How often is the data sent?
-
-Which wireless protocols did you use (WiFi, LoRa, etc …)?
-
-Which transport protocols were used (MQTT, webhook, etc …)
-
-*Elaborate on the design choices regarding data transmission and wireless protocols. That is how your choices affect the device range and battery consumption.
-
 As alluded to in previous sections, data is transmitted via Wi-Fi using adafruit IO as an MQTT broker. Currently, it sends data every fifth minute, but I see no need to update as frequently when it is deployed in its final state: every hour or so will do.
 
 My initial idea was to use LoRa instead of Wi-Fi to transmit data, as it has several advantages: namely longer range and lower power consumption. This project was however developed away from any preexisting LoRa gateway, and I did not want to create and maintain one for myself as that would cost money. In addition, both low range and high power consumption matter less in this current implementation, as this device will be kept at home plugged into a wall socket and in range of Wi-Fi at all times. The effective range is extended by the adafruit IO solution, as I can access my data from anywhere where I have an internet connection.
@@ -110,11 +100,8 @@ How long data will be preserved can be decided when creating the blocks, or when
 
 
 # Finalizing the design
-Show the final results of your project. Give your final thoughts on how you think the project went. What could have been done in an other way, or even better? Pictures are nice!
+**This guide is not finalized!**
+I am currently still waiting for a final cable to arrive. In the meantime, this is as far as I’ve come. I am working on presenting the hardware appealingly by putting everything in a box, and I would like to add a LED light that shows when it is time to water the plant, but I have not done so yet. This is an image of the device in its current state:
 
-Show final results of the project
-
-Pictures
-
-*Video presentation
+![alt text](Assets/Device_in_action.jpg)
 
