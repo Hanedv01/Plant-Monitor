@@ -82,7 +82,11 @@ As I only used a small part of the breadboard linked to in materials (and includ
 I used adafruit IO as a platform for my data. This is a free-to-use cloud service that centers around “feeds”, being different topics to subscribe to. As it can act both as a MQTT broker receiving data and then can visualize it at the same time, it seemed like the easiest alternative, while being free as well. As I will be the main person to look at the data, I felt no need to put in extra work for fancier visualization of the same data on another site. Additionally, it allows me access to my data while away from my home network, which is nice while away.
 
 # The code
-Import core functions of your code here, and don't forget to explain what you have done! Do not put too much code here, focus on the core functionalities. Have you done a specific function that does a calculation, or are you using clever function for sending data on two networks? Or, are you checking if the value is reasonable etc. Explain what you have done, including the setup of the network, wireless, libraries and all that is needed to understand.
+All interesting code is contained in **main.py**. Initially, some pins and variables are defined. **downtime** in particular decides how long the monitor should wait between measurements (in seconds).
+
+Then we enter a while-loop. Every time the loop is entered, we first read all relevant pins, then we do something with the raw data if necessary and lastly we send everything to adafruit IO.
+
+The folder **lib** contains supportive files that allow **main.py** to function. **keys.py** is perhaps the most important one, as it needs to be edited each time you change Wi-Fi or adafruit setup. **mqtt.py** and **wifiConnection.py** can remain unchanged, as they provide the framework for connectivity. I took them from the course’s [GitHub](https://github.com/iot-lnu/pico-w/tree/main/network-examples) and have not changed anything in them.
 
 # Transmitting the data / connectivity
 As alluded to in previous sections, data is transmitted via Wi-Fi using adafruit IO as an MQTT broker. Currently, it sends data every fifth minute, but I see no need to update as frequently when it is deployed in its final state: every hour or so will do.
@@ -100,7 +104,7 @@ How long data will be preserved can be decided when creating the blocks, or when
 
 
 # Finalizing the design
-**This guide is not finalized!**
+**This guide is not finalized, as the device it describes is not finished!**
 I am currently still waiting for a final cable to arrive. In the meantime, this is as far as I’ve come. I am working on presenting the hardware appealingly by putting everything in a box, and I would like to add a LED light that shows when it is time to water the plant, but I have not done so yet. This is an image of the device in its current state:
 
 ![alt text](Assets/Device_in_action.jpg)
