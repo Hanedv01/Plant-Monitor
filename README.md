@@ -70,22 +70,15 @@ Finally, the code will be uploaded to your Raspberry Pi. Every time you change s
 	5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
 
 # Putting everything together
-How is all the electronics connected? Describe all the wiring, good if you can show a circuit diagram. Be specific on how to connect everything, and what to think of in terms of resistors, current and voltage. Is this only for a development setup or could it be used in production?
-
-Circuit diagram (can be hand drawn)
-
-*Electrical calculations
+The wiring should be assembled as follows:
 
 ![alt text](Assets/Wiring.svg)
 
+The potentials Ground (black cable) and + (red cable) are along the two top strips and provide an operating voltage to all sensors. Data is then transmitted to the relevant pins of the Raspberry Pi through the cables with different colours.
+
+As I only used a small part of the breadboard linked to in materials (and included in the starter kit to this course), I opted to use a smaller breadboard to be able to hide the wiring nicely in a box. 
+
 # Platform
-Describe your choice of platform. If you have tried different platforms it can be good to provide a comparison.
-Is your platform based on a local installation or a cloud? Do you plan to use a paid subscription or a free? Describe the different alternatives on going forward if you want to scale your idea.
-
-Describe platform in terms of functionality
-
-*Explain and elaborate what made you choose this platform
-
 I used adafruit IO as a platform for my data. This is a free-to-use cloud service that centers around “feeds”, being different topics to subscribe to. As it can act both as a MQTT broker receiving data and then can visualize it at the same time, it seemed like the easiest alternative, while being free as well. As I will be the main person to look at the data, I felt no need to put in extra work for fancier visualization of the same data on another site. Additionally, it allows me access to my data while away from my home network, which is nice while away.
 
 # The code
@@ -110,6 +103,8 @@ My initial idea was to use LoRa instead of Wi-Fi to transmit data, as it has sev
 
 # Presenting the data
 The data is presented in adafruit’s own dashboard. Its creation is simple: first, log in to adafruit and press IO in the top menu. Then, go to Dashboards >> + New Dashboard and create a new dashboard. Click on it and go to the gearwheel in the top right corner and then “+ Create New Block”. Using this method, create four “Line Chart Blocks”, one for each feed which you should have: temperature, humidity, light and soil moisture. Design the blocks according to your own preferences using the gearwheel in the top right corner.
+
+![alt text](Assets/Dashboard.png)
 
 How long data will be preserved can be decided when creating the blocks, or when editing them. During development, I kept data for 48 hours, but in the final deployment I plan on saving it for longer, likely a week or a month. Long term developments are more interesting to me than to remember how the weather was yesterday!
 
