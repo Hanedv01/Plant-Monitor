@@ -1,34 +1,18 @@
 Author: Hannes Tjulin
 
-Student ID: ht222pt
-# Tutorial on how to make a Plant Monitor
-Short project overview
-
-How much time it might take to do (approximation)
-
 This is a tutorial on how to make a plant monitor that both monitors long-term developments in a plant’s climate and can alert when it is time to water the plant. Following this guide should take no more than two hours, provided that all materials are at hand.
 
+**Disclaimer** I am currently still waiting for a cable to connect my soil moisture sensor to the Raspberry Pi. Currently, this device only monitors light intensity, temperature and humidity. When the cable hopefully arrives, I will add the soil sensor to this device.
+
 # Objective
-Why you chose the project
-
-What purpose does it serve
-
-What insights you think it will give
-
 My girlfriend has a large collection of houseplants. While she does not need reminders to water them, I do when she is away. In addition, she has read up on optimal conditions for her plants, but quantifying anything other than temperature requires specialized measuring equipment which we do not have. From these twin needs of long-term measurements and short-term alerts, the idea of this project was born. 
 
 My hope is that the work done in researching and preparing this will enable me to do other projects within IoT. There is also room for improvement in this device, such as making it portable, which I might tackle in some spare time. 
 
 # Material
-List of material
-
-What the different things (sensors, wires, controllers) do - short specifications
-
-Where you bought them and how much they cost
-
 The following materials are required to make this plant monitor in its most basic form. Everything was bought from [Electrokit](https://www.electrokit.com/).
 
-| Material | Price |
+| Material | Price (SEK) |
 | ----------- | ----------- |
 | [Raspberry Pi Pico WH](https://www.electrokit.com/raspberry-pi-pico-wh) | 109 |
 | [USB Cable A M – micro B M](https://www.electrokit.com/usb-kabel-a-hane-micro-b-5p-hane-1.8m) | 39 |
@@ -49,14 +33,6 @@ Lastly, some hardware to make everything else work: The USB cable powers everyth
 
 
 # Computer setup
-How is the device programmed. Which IDE are you using. Describe all steps from flashing the firmware, installing plugins in your favorite editor. How flashing is done on MicroPython. The aim is that a beginner should be able to understand.
-
-Chosen IDE
-
-How the code is uploaded
-
-Steps that you needed to do for your computer. Installation of Node.js, extra drivers, etc.
-
 This section contains multiple guides, split up into different topics. If you follow these step by step, you should be able to upload all code to your Raspberry Pi.
 
 ## Firmware update
@@ -100,6 +76,8 @@ Circuit diagram (can be hand drawn)
 
 *Electrical calculations
 
+![alt text](Assets/Wiring.svg)
+
 # Platform
 Describe your choice of platform. If you have tried different platforms it can be good to provide a comparison.
 Is your platform based on a local installation or a cloud? Do you plan to use a paid subscription or a free? Describe the different alternatives on going forward if you want to scale your idea.
@@ -133,7 +111,7 @@ My initial idea was to use LoRa instead of Wi-Fi to transmit data, as it has sev
 # Presenting the data
 The data is presented in adafruit’s own dashboard. Its creation is simple: first, log in to adafruit and press IO in the top menu. Then, go to Dashboards >> + New Dashboard and create a new dashboard. Click on it and go to the gearwheel in the top right corner and then “+ Create New Block”. Using this method, create four “Line Chart Blocks”, one for each feed which you should have: temperature, humidity, light and soil moisture. Design the blocks according to your own preferences using the gearwheel in the top right corner.
 
-How long data will be preserved can be decided when creating the blocks. During development, I kept data for 48 hours, but in the final deployment I plan on saving it for longer, likely a week or a month. Long term developments are more interesting to me than to remember how the weather was yesterday!
+How long data will be preserved can be decided when creating the blocks, or when editing them. During development, I kept data for 48 hours, but in the final deployment I plan on saving it for longer, likely a week or a month. Long term developments are more interesting to me than to remember how the weather was yesterday!
 
 
 # Finalizing the design
