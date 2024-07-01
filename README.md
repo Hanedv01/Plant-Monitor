@@ -63,11 +63,11 @@ Finally, the code will be uploaded to your Raspberry Pi. Every time you change s
 2. Open the folder in VS Code by selecting File >> Open Folder and selecting the folder that you downloaded.
 3. Change all variables in **lib/keys.py** to line up with your own credentials. Two types of information are needed: password and SSID for your Wi-Fi (make sure that its frequency is 2.4 GHz) and information about your adafruit account. 
 4. Go to the PyMakr window in VS Code’s left sidebar. If you have downloaded everything correctly, there should be a project named “Plant Monitor” under the Projects tab. 
-	1. Click on “ADD DEVICES” under the project and select TODO.
-	2. Create a terminal for the Raspberry Pi by clicking TODO.
+	1. Click on “ADD DEVICES” under the project and add the Raspberry Pi. It should be called something like “USB Serial Device (COMx)”, and if you are unsure, detach the USB cable and see what device disappears.
+	2. Create a terminal for the Raspberry Pi by hovering over the device and clicking “Create Terminal”. The symbol is “>_”, boxed.
 	3. Start development mode for this project by hovering over the projects name and clicking the button that looks like “</>”.
 	4. Send the code to the Raspberry Pi by saving (Ctrl + S).
-	5. You should get a printout in the terminal saying something like TODO. If you get this: good job! The coding part is done for now.  
+	5. You should get a printout in the terminal saying something like “The temperature is 24 degrees Celsius, the humidity is 50 % and the light is 31.3”. If you get this: good job! The coding part is done for now.  
 
 # Putting everything together
 The wiring should be assembled as follows:
