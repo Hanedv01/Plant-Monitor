@@ -73,7 +73,7 @@ Finally, the code will be uploaded to your Raspberry Pi. Every time you change s
 # Putting everything together
 The wiring should be assembled as follows:
 
-![alt text](Assets/Wiring.svg)
+![alt text](Assets/Wiring2.svg)
 
 The potentials Ground (black cable) and + (red cable) are along the two top strips and provide an operating voltage to all sensors. Data is then transmitted to the relevant pins of the Raspberry Pi through the cables with different colours.
 
