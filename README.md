@@ -1,3 +1,6 @@
+Add: 
+Vilken dator och operativsystem jag använder
+
 Author: Hannes Tjulin
 
 This is a tutorial on how to make a plant monitor that both monitors long-term developments in a plant’s climate and can alert when it is time to water the plant. Following this guide should take no more than two hours, provided that all materials are at hand.
@@ -23,13 +26,14 @@ The following materials are required to make this plant monitor in its most basi
 | [Adafruit STEMMA Soil Sensor](https://www.electrokit.com/jordfuktighetssensor-kapacitiv-i2c) | 115 |
 | [DHT 11 Humidity and Temperature Sensor](https://www.electrokit.com/digital-temperatur-och-fuktsensor-dht11) |49|
 | [Photoresistor Module](https://www.electrokit.com/ljussensor) | 39 |
-| **TOTAL** | **463** |
+| [RG LED Module](https://www.electrokit.com/led-modul-rod/gron-5mm) | 19 |
+| **TOTAL** | **482** |
 
 The Raspberry Pi is the brain of the device. Variants other than Pico WH may be chosen, but then this guide should not be followed to the letter, as details may differ. Data is sent with the Raspberry Pi’s own Wi-Fi transmitter.
 
 The device has three important sensors: the DHT 11 which measures temperature and humidity, the photoresistor module which measures light intensity and the Adafruit STEMMA soil sensor which measures soil moisture. 
 
-Lastly, some hardware to make everything else work: The USB cable powers everything, the jumper cables connect everything and the breadboard forms a stable base for everything. The JST-PH cable is required for the soil sensor, which does not connect to ordinary jumper cables.
+Lastly, some hardware to make everything else work: The USB cable powers everything, the jumper cables connect everything and the breadboard forms a stable base for everything. The JST-PH cable is required for the soil sensor, which does not connect to ordinary jumper cables. A red-green LED has been added to increase the complexity of the project while waiting for the soil sensor.
 
 
 # Computer setup
@@ -82,9 +86,9 @@ As I only used a small part of the breadboard linked to in materials (and includ
 I used adafruit IO as a platform for my data. This is a free-to-use cloud service that centers around “feeds”, being different topics to subscribe to. As it can act both as a MQTT broker receiving data and then can visualize it at the same time, it seemed like the easiest alternative, while being free as well. As I will be the main person to look at the data, I felt no need to put in extra work for fancier visualization of the same data on another site. Additionally, it allows me access to my data while away from my home network, which is nice while away.
 
 # The code
-All interesting code is contained in **main.py**. Initially, some pins and variables are defined. **downtime** in particular decides how long the monitor should wait between measurements (in seconds).
+All interesting code is contained in **main.py**. Initially, some pins and variables are defined. **downtime** in particular decides how long the monitor should wait between measurements (in seconds). The LED is set to be turned off, and we try to connect to the Wi-Fi. If this is successful, we turn the light green. In this way, we have an indicator if we are connected or not when we are not plugged into a computer.
 
-Then we enter a while-loop. Every time the loop is entered, we first read all relevant pins, then we do something with the raw data if necessary and lastly we send everything to adafruit IO.
+Then we enter a while-loop. Every time the loop is entered, we first read all relevant pins, then we do something with the raw data if necessary and lastly we send everything to adafruit IO. If a certain measurement is above/below a certain limit, we can turn the LED light red. When the soil sensor has arrived, this will happen when the moisture is below a predecided threshold.
 
 The folder **lib** contains supportive files that allow **main.py** to function. **keys.py** is perhaps the most important one, as it needs to be edited each time you change Wi-Fi or adafruit setup. **mqtt.py** and **wifiConnection.py** can remain unchanged, as they provide the framework for connectivity. I took them from the course’s [GitHub](https://github.com/iot-lnu/pico-w/tree/main/network-examples) and have not changed anything in them.
 
@@ -105,7 +109,9 @@ How long data will be preserved can be decided when creating the blocks, or when
 
 # Finalizing the design
 **This guide is not finalized, as the device it describes is not finished!**
-I am currently still waiting for a final cable to arrive. In the meantime, this is as far as I’ve come. I am working on presenting the hardware appealingly by putting everything in a box, and I would like to add a LED light that shows when it is time to water the plant, but I have not done so yet. This is an image of the device in its current state:
+I am currently still waiting for a final cable to arrive. In the meantime, this is as far as I’ve come. This is an image of the device in its current state:
 
-![alt text](Assets/Device_in_action.jpg)
+![alt text](Assets/Device_green.jpg)
+
+The light is currently green when the temperature is below 28 degrees Celsius, else it turns red. When the cable has arrived, it will be changed to be dependent on soil moisture.
 
