@@ -1,7 +1,4 @@
-Add: 
-Vilken dator och operativsystem jag använder
-
-Author: Hannes Tjulin
+Author: Hannes Tjulin, ht222pt
 
 This is a tutorial on how to make a plant monitor that both monitors long-term developments in a plant’s climate and can alert when it is time to water the plant. Following this guide should take no more than two hours, provided that all materials are at hand.
 
@@ -37,7 +34,7 @@ Lastly, some hardware to make everything else work: The USB cable powers everyth
 
 
 # Computer setup
-This section contains multiple guides, split up into different topics. If you follow these step by step, you should be able to upload all code to your Raspberry Pi.
+This section contains multiple guides, split up into different topics. If you follow these step by step, you should be able to upload all code to your Raspberry Pi. My computer runs Windows 11.
 
 ## Firmware update
 First, how to update the firmware on the Raspberry Pi Pico. This is necessary for the Raspberry Pi to be able to run Python code. 
